@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "EchoServer": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "HTTP_ROOT": "C:\\Users\\ldemm\\OneDrive\\Bureau\\SOC\\eiin839\\TD1\\Echo\\ChatServer\\www\\pub"
+      }
+    }
+  }
+}

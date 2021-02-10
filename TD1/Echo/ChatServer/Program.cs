@@ -40,7 +40,7 @@ namespace Echo
         public void startClient(TcpClient inClientSocket)
         {
             this.clientSocket = inClientSocket;
-            Thread ctThread = new Thread(Echo);
+            Thread ctThread = new Thread(Get);
             ctThread.Start();
         }
 
@@ -58,6 +58,30 @@ namespace Echo
                 string str = reader.ReadString();
                 Console.WriteLine(str);
                 writer.Write(str);
+            }
+        }
+
+        private void Get()
+        {
+            NetworkStream stream = clientSocket.GetStream();
+            BinaryReader reader = new BinaryReader(stream);
+            BinaryWriter writer = new BinaryWriter(stream);
+
+            while (true)
+            {
+
+                string str = reader.ReadString();
+                Console.WriteLine(str);
+                string response = str;
+                string[] command = str.Split(' ');
+                string httpRoot = Environment.GetEnvironmentVariable("HTTP_ROOT");
+                if (command[0] == "GET") {
+                    if (File.Exists(httpRoot + command[1])) {
+                        string fileContent = File.ReadAllText(httpRoot + command[1]);
+                        response = "http/1.0 200 OK\n\n" + fileContent;
+                    }
+                }
+                writer.Write(response);
             }
         }
 
