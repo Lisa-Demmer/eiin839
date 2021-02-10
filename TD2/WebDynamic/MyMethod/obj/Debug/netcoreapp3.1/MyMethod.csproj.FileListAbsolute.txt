@@ -1,0 +1,13 @@
+C:\Users\ldemm\OneDrive\Bureau\SOC\eiin839\TD2\MyMethod\bin\Debug\netcoreapp3.1\MyMethod.exe
+C:\Users\ldemm\OneDrive\Bureau\SOC\eiin839\TD2\MyMethod\bin\Debug\netcoreapp3.1\MyMethod.deps.json
+C:\Users\ldemm\OneDrive\Bureau\SOC\eiin839\TD2\MyMethod\bin\Debug\netcoreapp3.1\MyMethod.runtimeconfig.json
+C:\Users\ldemm\OneDrive\Bureau\SOC\eiin839\TD2\MyMethod\bin\Debug\netcoreapp3.1\MyMethod.runtimeconfig.dev.json
+C:\Users\ldemm\OneDrive\Bureau\SOC\eiin839\TD2\MyMethod\bin\Debug\netcoreapp3.1\MyMethod.dll
+C:\Users\ldemm\OneDrive\Bureau\SOC\eiin839\TD2\MyMethod\bin\Debug\netcoreapp3.1\MyMethod.pdb
+C:\Users\ldemm\OneDrive\Bureau\SOC\eiin839\TD2\MyMethod\obj\Debug\netcoreapp3.1\MyMethod.csprojAssemblyReference.cache
+C:\Users\ldemm\OneDrive\Bureau\SOC\eiin839\TD2\MyMethod\obj\Debug\netcoreapp3.1\MyMethod.AssemblyInfoInputs.cache
+C:\Users\ldemm\OneDrive\Bureau\SOC\eiin839\TD2\MyMethod\obj\Debug\netcoreapp3.1\MyMethod.AssemblyInfo.cs
+C:\Users\ldemm\OneDrive\Bureau\SOC\eiin839\TD2\MyMethod\obj\Debug\netcoreapp3.1\MyMethod.csproj.CoreCompileInputs.cache
+C:\Users\ldemm\OneDrive\Bureau\SOC\eiin839\TD2\MyMethod\obj\Debug\netcoreapp3.1\MyMethod.dll
+C:\Users\ldemm\OneDrive\Bureau\SOC\eiin839\TD2\MyMethod\obj\Debug\netcoreapp3.1\MyMethod.pdb
+C:\Users\ldemm\OneDrive\Bureau\SOC\eiin839\TD2\MyMethod\obj\Debug\netcoreapp3.1\MyMethod.genruntimeconfig.cache

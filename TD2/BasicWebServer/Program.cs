@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Net;
+using System.Reflection;
 using System.Text;
 using System.Web;
 
@@ -90,6 +92,57 @@ namespace BasicServerHTTPlistener
                 foreach (string str in request.Url.Segments)
                 {
                     Console.WriteLine(str);
+                }
+
+                // On récupère les segments
+                string[] segments = request.Url.Segments;
+
+                // On récupère le dernier segment
+                string last_segment = segments[segments.Length - 1];
+
+                // On construit les paramètres
+                Object[] params_request = new Object[2];
+                params_request[0] = HttpUtility.ParseQueryString(request.Url.Query).Get("param1");
+                params_request[1] = HttpUtility.ParseQueryString(request.Url.Query).Get("param2");
+
+                // On récupère la classe et la méthode
+                Type type = typeof(MyMethods);
+                MethodInfo method = type.GetMethod(last_segment);
+
+                // Si la méthode existe on l'appelle sinon on affiche "ERROR"
+                if (method != null) {
+                    MyMethods c = new MyMethods();
+                    string result = (string)method.Invoke(c, params_request);
+                    Console.WriteLine(result);
+                } else
+                {
+                    Console.WriteLine("ERROR");
+                }
+
+                if (last_segment.Equals("MyMethod"))
+                {
+                    ProcessStartInfo start = new ProcessStartInfo();
+                    start.FileName = @"C:\Users\ldemm\OneDrive\Bureau\SOC\eiin839\TD2\MyMethod\bin\Debug\netcoreapp3.1\MyMethod.exe"; // Specify exe name.
+                    start.Arguments = params_request[0] + " " + params_request[1]; // Specify arguments.
+                    start.UseShellExecute = false;
+                    start.RedirectStandardOutput = true;
+                    //
+                    // Start the process.
+                    //
+                    using (Process process = Process.Start(start))
+                    {
+                        //
+                        // Read in all the text from the process with the StreamReader.
+                        //
+                        using (StreamReader reader = process.StandardOutput)
+                        {
+                            string result = reader.ReadToEnd();
+                            Console.WriteLine(result);
+                        }
+                    }
+                } else
+                {
+                    Console.WriteLine("ERROR");
                 }
 
                 //get params un url. After ? and between &
