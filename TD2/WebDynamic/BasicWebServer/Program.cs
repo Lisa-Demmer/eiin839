@@ -130,7 +130,7 @@ namespace BasicServerHTTPlistener
                 if (last_segment.Equals("MyMethod"))
                 {
                     ProcessStartInfo start = new ProcessStartInfo();
-                    start.FileName = @"C:\Users\ldemm\OneDrive\Bureau\SOC\eiin839\TD2\MyMethod\bin\Debug\netcoreapp3.1\MyMethod.exe"; // Specify exe name.
+                    start.FileName = @"C:\Users\ldemm\OneDrive\Bureau\SOC\eiin839\TD2\WebDynamic\MyMethod\bin\Debug\netcoreapp3.1\MyMethod.exe"; // Specify exe name.
                     start.Arguments = params_request[0] + " " + params_request[1]; // Specify arguments.
                     start.UseShellExecute = false;
                     start.RedirectStandardOutput = true;
