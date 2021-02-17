@@ -12,5 +12,10 @@ namespace BasicServerHTTPlistener
         {
             return "<HTML><BODY> Hello " + param1_value + " et " + param2_value + "</BODY></HTML>"; 
         }
+
+        public string Incr(string value)
+        {
+            return "{ \"success\": true, \"data\": " + (int.Parse(value) + 1).ToString() + "}";
+        }
     }
 }
