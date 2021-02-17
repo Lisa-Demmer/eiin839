@@ -96,15 +96,22 @@ namespace BasicServerHTTPlistener
 
                 // On récupère les segments
                 string[] segments = request.Url.Segments;
-
+                string result = "";
+                string resultTwo = "";
                 // On récupère le dernier segment
                 string last_segment = segments[segments.Length - 1];
-
-                // On construit les paramètres
-                Object[] params_request = new Object[2];
-                params_request[0] = HttpUtility.ParseQueryString(request.Url.Query).Get("param1");
-                params_request[1] = HttpUtility.ParseQueryString(request.Url.Query).Get("param2");
-
+                Object[] params_request = null;
+                if (last_segment.Equals("MyMethod"))
+                {
+                    // On construit les paramètres
+                    params_request = new Object[2];
+                    params_request[0] = HttpUtility.ParseQueryString(request.Url.Query).Get("param1");
+                    params_request[1] = HttpUtility.ParseQueryString(request.Url.Query).Get("param2");
+                } else {
+                    // On construit les paramètres
+                    params_request = new Object[1];
+                    params_request[0] = HttpUtility.ParseQueryString(request.Url.Query).Get("val");
+                }
                 // On récupère la classe et la méthode
                 Type type = typeof(MyMethods);
                 MethodInfo method = type.GetMethod(last_segment);
@@ -112,10 +119,11 @@ namespace BasicServerHTTPlistener
                 // Si la méthode existe on l'appelle sinon on affiche "ERROR"
                 if (method != null) {
                     MyMethods c = new MyMethods();
-                    string result = (string)method.Invoke(c, params_request);
+                    result = (string)method.Invoke(c, params_request);
                     Console.WriteLine(result);
                 } else
                 {
+                    result = "ERROR";
                     Console.WriteLine("ERROR");
                 }
 
@@ -136,12 +144,13 @@ namespace BasicServerHTTPlistener
                         //
                         using (StreamReader reader = process.StandardOutput)
                         {
-                            string result = reader.ReadToEnd();
-                            Console.WriteLine(result);
+                            resultTwo = reader.ReadToEnd();
+                            Console.WriteLine(resultTwo);
                         }
                     }
                 } else
                 {
+                    resultTwo = "ERROR";
                     Console.WriteLine("ERROR");
                 }
 
@@ -162,10 +171,15 @@ namespace BasicServerHTTPlistener
                 HttpListenerResponse response = context.Response;
 
                 // Construct a response.
-                string responseString = "<HTML><BODY> Hello world!</BODY></HTML>";
+                //string responseString = "<HTML><BODY> Hello world!</BODY></HTML>";
+                string responseString = result;
                 byte[] buffer = System.Text.Encoding.UTF8.GetBytes(responseString);
                 // Get a response stream and write the response to it.
                 response.ContentLength64 = buffer.Length;
+                if (last_segment.Equals("Incr"))
+                {
+                    response.ContentType = "application/json";
+                }
                 System.IO.Stream output = response.OutputStream;
                 output.Write(buffer, 0, buffer.Length);
                 // You must close the output stream.
