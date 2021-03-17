@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="34cf9a31-0e1b-45a0-8fc2-9cf735e359bd" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8733/Design_Time_Addresses/AuthentifiedAccessSoap/Service1/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="a2ca230c-02bb-47d6-af54-ddd78c883bf7" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/AuthentifiedAccessSoap/Service1/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="230986e8-0896-4164-b1f7-721ba16fe7c2" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/AuthentifiedAccessSoap/Service1/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="92abaf55-b3c6-4fa9-945b-03c56512f366" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/AuthentifiedAccessSoap/Service1/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
